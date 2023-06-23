@@ -7,16 +7,11 @@ import cjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 import fs from 'fs'
 import path from 'path'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const baseFolderPath = './src/components/package'
+const baseFolderPath = './src/components/'
 // const banner = text.replace('${version}', packageInfo.version)
 
 const components = fs
@@ -63,7 +58,6 @@ export default () => {
                 chunkFileNames: '[name]-[hash].mjs',
             },
             plugins: [
-                
                 node({
                     extensions: ['.vue', '.ts']
                 }),
@@ -71,17 +65,7 @@ export default () => {
                 vue(vuePluginConfig),
                 babel(babelOptions),
                 cjs()
-            ],
-            resolve: {
-                alias: {
-                  '@': path.resolve(__dirname, 'src'),
-                  '@package': path.resolve(__dirname, 'src/components/package'),
-                  '@components': path.resolve(__dirname, 'src/components'),
-                  '@services': path.resolve(__dirname, 'src/services'),
-                  '@packageTypes': path.resolve(__dirname, 'src/packageTypes'),
-                  '@fonts': path.resolve(__dirname, 'src/assets/scss/fonts'),
-                },
-            },
+            ]
         },
         {
             input: 'src/index.ts',
@@ -92,7 +76,6 @@ export default () => {
                 // banner: banner
             },
             plugins: [
-                
                 node({
                     extensions: ['.vue', '.ts']
                 }),
@@ -100,17 +83,7 @@ export default () => {
                 vue(vuePluginConfig),
                 babel(babelOptions),
                 cjs()
-            ],
-            resolve: {
-                alias: {
-                  '@': path.resolve(__dirname, 'src'),
-                  '@package': path.resolve(__dirname, 'src/components/package'),
-                  '@components': path.resolve(__dirname, 'src/components'),
-                  '@services': path.resolve(__dirname, 'src/services'),
-                  '@packageTypes': path.resolve(__dirname, 'src/packageTypes'),
-                  '@fonts': path.resolve(__dirname, 'src/assets/scss/fonts'),
-                },
-              },
+            ]
         },
         {
             input: entries,
@@ -121,7 +94,6 @@ export default () => {
                 exports: 'named'
             },
             plugins: [
-                
                 node({
                     extensions: ['.vue', '.ts']
                 }),
@@ -129,17 +101,7 @@ export default () => {
                 vue(vuePluginConfig),
                 babel(babelOptions),
                 cjs()
-            ],
-            resolve: {
-                alias: {
-                  '@': path.resolve(__dirname, 'src'),
-                  '@package': path.resolve(__dirname, 'src/components/package'),
-                  '@components': path.resolve(__dirname, 'src/components'),
-                  '@services': path.resolve(__dirname, 'src/services'),
-                  '@packageTypes': path.resolve(__dirname, 'src/packageTypes'),
-                  '@fonts': path.resolve(__dirname, 'src/assets/scss/fonts'),
-                },
-              },
+            ]
         },
         {
             input: 'src/index.ts',
@@ -155,7 +117,6 @@ export default () => {
                 }
             },
             plugins: [
-                
                 node({
                     extensions: ['.vue', '.ts']
                 }),
@@ -163,17 +124,7 @@ export default () => {
                 vue(vuePluginConfig),
                 babel(babelOptions),
                 cjs()
-            ],
-            resolve: {
-                alias: {
-                  '@': path.resolve(__dirname, 'src'),
-                  '@package': path.resolve(__dirname, 'src/components/package'),
-                  '@components': path.resolve(__dirname, 'src/components'),
-                  '@services': path.resolve(__dirname, 'src/services'),
-                  '@packageTypes': path.resolve(__dirname, 'src/packageTypes'),
-                  '@fonts': path.resolve(__dirname, 'src/assets/scss/fonts'),
-                },
-              },
+            ]
         }
     ]
 

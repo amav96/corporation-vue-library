@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { Pagination, BackEndPagination, Field, Inputs, requestConfiguration as requestConfigurationEntity } from "@packageTypes"
 import { toRefs, useSlots, computed, reactive, ref, onMounted, watch, PropType } from 'vue';
-import {Form,Button} from "@package";
+
 import {useToast} from 'vue-toast-notification';
 import { BTable, BPagination } from 'bootstrap-vue-3';
+import Form from "../Form/Form.vue";
+import Button from "../Button/Button.vue";
 
 const props = defineProps({
     items : {

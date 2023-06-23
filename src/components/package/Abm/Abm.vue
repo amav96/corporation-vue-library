@@ -1,8 +1,10 @@
 <script setup lang='ts'>
-import { Button, ModalForm, Dialog, Table } from '@package';
-import { toRefs, reactive, ref, computed, PropType, nextTick } from 'vue';
+import { Table, Button, ModalForm, Dialog } from '@package';
+import { toRefs, reactive, ref, computed, PropType, nextTick, onMounted, watch } from 'vue';
 import {useToast} from 'vue-toast-notification';
 import { ModalFormProps, deleteProp, TableProps, requestConfiguration as  requestConfigurationEntity } from "@packageTypes"
+
+
 
 const props = defineProps({
   table: {
@@ -156,7 +158,7 @@ const deleteItem = async (resource: any ) :Promise<void> => {
   }
 }
 
-const refTable = ref<any>(null)
+const refTable = ref<InstanceType<typeof Table> | null>(null)
 const aditionalParams = ref<{deleted?: string}>({})
 const lookForInactives = async () : Promise<void> => {
   aditionalParams.value = { deleted: 'true'}
