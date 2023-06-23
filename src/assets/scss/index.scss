@@ -1,0 +1,72 @@
+// Variables
+@import 'variables';
+
+//Custom Fonts
+// @import 'fonts';
+
+// //Custom CSS
+@import 'custom';
+
+@import "@package/Date/Date";
+@import "@package/Input/Input";
+@import "@package/Button/Button";
+@import "@package/File/File";
+@import "@package/Form/Form";
+@import "@package/NavBar/NavBar";
+@import "@package/Select/Select";
+@import "@package/SideBar/SideBar";
+@import "@package/Table/Table";
+@import "@package/TextArea/TextArea";
+
+
+.AppRoot-fullPage{
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.AppMain{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.AppMain__layer{
+  display: flex;
+  flex: 1 1 0;
+  min-height: 1px;
+}
+
+.AppMain__PageAndTopBar{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+}
+.AppMain__layer__PageAndTopBar{
+  flex : 1;
+  overflow-y: auto;
+}
+
+
+.HomePageContent{
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-height: 1px;
+  position: relative;
+}
+
+.HomePageContent__contentContainer{
+  width: 100%;
+}
+
+.Scrollable--vertical{
+  min-height: 1px;
+  overflow-y: auto;
+}

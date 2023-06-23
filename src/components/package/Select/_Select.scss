@@ -1,0 +1,58 @@
+div.multiselect {
+    height: unset;
+    &.multiselect--active:not(.multiselect--above) .multiselect__tags {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    & .multiselect__tags {
+        font-weight: 700;
+        border-radius: 20px;
+        border: 1px solid $borderColor;
+        padding: 7px 40px 7px 12px;
+        min-height: 23px;
+        color: $textColorOscuro;
+        & .multiselect__tag {
+            padding: 4px 26px 4px 10px;
+            margin-right: 2px;
+            background: $naranjaMarca;
+            margin-bottom: 2px;
+            & .multiselect__tag-icon:hover {
+                background: #ff6a00;
+            }
+        }
+    }
+    & .multiselect__input {
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 700;
+        color: $textColorOscuro;
+        padding: 0;
+        margin: 0;
+    }
+    & .multiselect__single {
+        font-size: 14px;
+        line-height: 23px;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+    & .multiselect__placeholder {
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        color: #a3a3a3;
+    }
+    & .multiselect__content-wrapper {
+        border: 1px solid $borderColor;
+        & .multiselect__content {
+            & .multiselect__option.multiselect__option--highlight {
+                background: $naranjaMarca;
+            }
+            & .multiselect__option.multiselect__option--selected:hover {
+                background: $rojoPastel;
+            }
+        }
+    }
+}

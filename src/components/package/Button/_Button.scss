@@ -1,0 +1,357 @@
+button.button-global {
+    &,
+    &:focus,
+    &:active,
+    &:hover,
+    &:not(:disabled):not(.disabled):active {
+        @include reset-button;
+    }
+    &--gris {
+        margin-right: 20px;
+        background-color: $grayButton !important;
+    }
+    &--blanco,
+    &--blanco:hover,
+    &--blanco:focus,
+    &--blanco:not(:disabled):not(.disabled):active {
+        @include btn-h37-border30;
+        background-color: $grayIntermedio !important;
+    }
+    &--naranja,
+    &--naranja:hover,
+    &--naranja:focus,
+    &--naranja:not(:disabled):not(.disabled):active {
+        @include btn-h37-border30;
+        background-color: $naranjaMarca !important;
+    }
+    &--rojo,
+    &--rojo:hover,
+    &--rojo:focus,
+    &--rojo:not(:disabled):not(.disabled):active {
+        @include btn-h37-border30;
+        background-color: $rojoPastel !important;
+    }
+    
+    &--primario,
+    &--primario:hover,
+    &--primario:focus,
+    &--primario:not(:disabled):not(.disabled):active {
+        @include btn-h37-border30;
+        background-color: $naranjaMarca !important;
+    }
+    &--secundario,
+    &--secundario:hover,
+    &--secundario:focus,
+    &--secundario:not(:disabled):not(.disabled):active {
+        @include btn-h37-border30;
+        background-color: $azulPastel !important;
+    }
+    &--redondo,
+    &--redondo:hover,
+    &--redondo:focus,
+    &--redondo:not(:disabled):not(.disabled):active {
+        position: relative;
+        height: 37px;
+        width: 37px;
+        border-radius: 50%;
+        @include flex-center;
+        background-color: $azulPastel !important;
+        & img {
+            width: 21px;
+        }
+    }
+    &--verde {
+        @include reset-button;
+        @include btn-h37-border30;
+        background-color: $verdeAgua !important;
+    }
+    &.button-search--modal {
+        border-radius: 30px;
+        height: 32px;
+        padding: 0 16px;
+    }
+    &.button-cancelar--modal {
+        border-radius: 30px;
+        height: 32px;
+        padding: 0 16px;
+    }
+    &--table-verde {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        background-color: $verdeAgua !important;
+        @include flex-center;
+        @include reset-button-table;
+        &:hover {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+        }
+    }
+    &--table-gris {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        color: $textColorOscuro !important;
+        background-color: $grayIntermedio !important;
+        @include flex-center;
+        @include reset-button-table;
+        &:hover {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+        }
+    }
+    &--table-naranja {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        background-color: $naranjaMarca !important;
+        @include flex-center;
+        @include reset-button-table;
+        &:hover {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+        }
+    }
+    &--table-rojo {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        background-color: $rojoDanger !important;
+        @include flex-center;
+        @include reset-button-table;
+        &:hover {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+        }
+    }
+    &--table-violeta {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        background-color: $violetaPastel !important;
+        @include flex-center;
+        @include reset-button-table;
+        &:hover {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+        }
+    }
+    &--table-azul {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        background-color: $azulPastel !important;
+        @include flex-center;
+        @include reset-button-table;
+        &:hover {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+        }
+    }
+}
+
+//EL BOTON EN CASO DE ESTAR LIGADO CON EL ESTADO disabled TENDRA UNA OPACIDAD MENOR
+button:disabled {
+    opacity: 0.4;
+}
+
+button.btn-filter-search,
+button.btn-filter-search:hover,
+button.btn-filter-search:focus,
+button.btn-filter-search:active {
+    border: none;
+    min-width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    padding: 0 7px;
+    @include flex-center;
+    background-color: $grayIntermedio;
+    & span {
+        margin-left: 7px;
+        @include font-18-700;
+    }
+    & img {
+        width: 19px;
+    }
+}
+
+button.btn-search,
+button.btn-search:hover,
+button.btn-search:focus,
+button.btn-search:active {
+    border: none;
+    min-width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    padding: 0 7px;
+    @include flex-center;
+    background-color: $naranjaMarca;
+    & span {
+        margin-left: 7px;
+        @include font-18-700;
+    }
+    & img {
+        width: 19px;
+    }
+}
+
+.btn-content{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+button.btn-edit {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fbfbfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+    }
+}
+
+// BTN CON OJITO PARA INFORMES
+.btn-con-svg-ojo {
+    @include button-table;
+    @include flex-center;
+    & img {
+        padding-left: 1px;
+    }
+}
+
+.btn-con-svg-eliminar {
+    height: 37px;
+    min-width: 37px;
+    border-radius: 5px;
+    margin-left: 24px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 5px;
+    background-color: $grayClaro;
+    @include flex-center;
+    &:hover {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+    }
+    & span {
+        padding-left: 7px;
+        @include font-14-700;
+    }
+}
+
+// ESTILOS PARA EL CONTENEDOR Y LOS BOTONES DE "ACTIVAS", "RECHAZADAS", "CERRADAS" Y "ARCHIVADAS"
+.container-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px 5px;
+    & .buttons-filtros {
+        display: flex;
+        & button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 27px;
+            margin-right: 16px;
+            border-radius: 30px;
+            border: none;
+            font-weight: 700;
+            font-size: 14px;
+            white-space: nowrap;
+            padding: 0 17px;
+            color: white;
+            background-color: var(--gray);
+            &.active-btn {
+                background-color: $naranjaMarca;
+            }
+        }
+    }
+}
+
+// ESTILOS PARA EL BOTON DE EXPORTAR CASOS
+.btn-con-img {
+    padding: 0 17px;
+    height: 28px;
+    border: none;
+    border-radius: 30px;
+    white-space: nowrap;
+    background-color: $naranjaMarca;
+    @include flex-space-between;
+    & span {
+        color: white;
+        margin-left: 7px;
+        @include font-18-700;
+    }
+    & img {
+        height: 19px;
+    }
+    &--azul {
+        background-color: $azulPastel;
+    }
+}
+
+// ESTILOS PARA EL BOTTON GROUP DE NUEVO SINIESTRO
+.button-group {
+    width: 100%;
+    margin: 30px 0 20px;
+    border-radius: 30px;
+    border: 1px solid #a6a6a6;
+    & button,
+    & button:hover,
+    & button:not(:disabled):not(.disabled):active,
+    & button:focus {
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 30px;
+        height: 43px;
+        color: #69757d;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        width: 100%;
+        &.button-group--active,
+        &.button-group--active:not(:disabled):not(.disabled),
+        &.button-group--active:hover,
+        &.button-group--active:not(:disabled):not(.disabled):active,
+        &.button-group--active:focus {
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: none;
+            background-color: $azulPastel;
+            border-radius: 30px;
+            color: $white;
+        }
+    }
+}
+
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+ .c-btn-sm{
+    font-size: 13.90px;
+    padding: 0.85px 10.8px;
+  }
+
+  .c-btn-md{
+    font-size: 16px;
+    padding: 3px 15px;
+  }
+
+  .c-btn-lg{
+    padding: 9px 22px;
+  }
+
+  .c-rounded-md{
+    border-radius: 16px !important;
+  }
+
+  .LocalBaseButton{
+    font-family: "Quicksand-Medium";
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+  }
+  
+  
+  .sm-LocalBaseButton-icon{
+      font-size:12px;
+  }
