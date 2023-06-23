@@ -11,7 +11,7 @@ import typescript from 'rollup-plugin-typescript2';
 import fs from 'fs'
 import path from 'path'
 
-const baseFolderPath = './src/components/'
+const baseFolderPath = './src/components/package'
 // const banner = text.replace('${version}', packageInfo.version)
 
 const components = fs
