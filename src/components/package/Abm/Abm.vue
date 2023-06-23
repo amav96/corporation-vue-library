@@ -1,9 +1,12 @@
 <script setup lang='ts'>
-import { Table, Button, ModalForm, Dialog } from '@package';
+
 import { toRefs, reactive, ref, computed, PropType, nextTick, onMounted, watch } from 'vue';
 import {useToast} from 'vue-toast-notification';
 import { ModalFormProps, deleteProp, TableProps, requestConfiguration as  requestConfigurationEntity } from "@packageTypes"
-
+import {Button} from '../Button';
+import {ModalForm} from '../ModalForm';
+import {Dialog} from '../Dialog';
+import {Table} from '../Table';
 
 
 const props = defineProps({
@@ -157,7 +160,7 @@ const deleteItem = async (resource: any ) :Promise<void> => {
     }
   }
 }
-
+// @ts-ignore
 const refTable = ref<InstanceType<typeof Table> | null>(null)
 const aditionalParams = ref<{deleted?: string}>({})
 const lookForInactives = async () : Promise<void> => {
@@ -221,7 +224,7 @@ const handleClose = (data: any) => {
 
 </script>
 <template>
-    <div >
+  <div >
       <Table
       :items="localItems"
       :striped="table.striped"
@@ -308,9 +311,11 @@ const handleClose = (data: any) => {
         </Button>
       </template>
       <template v-slot:table-busy>
-        <div class="text-center text-dark my-2">
-          
-        </div>
+       
+          <div class="text-center text-dark my-2">
+            
+          </div>
+      
       </template>
       </Table>
       <ModalForm
