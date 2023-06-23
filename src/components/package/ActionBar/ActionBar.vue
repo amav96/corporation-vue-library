@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import './ActionBar.scss';
 import { ref, PropType } from 'vue';
-import { useRouter } from 'vue-router';
 
 interface menuItem {
   title: string;
@@ -50,7 +49,6 @@ const emit = defineEmits<{
 
 const { translateY, iconOpen, iconClose, menu, backgroundItem, textItem } =
   props;
-const router = useRouter();
 
 const open = ref<boolean>(false);
 const handleOpen = () => {

@@ -8,5 +8,5 @@ export default {
 } as Plugin
 
 export {
-    TextArea
+    TextArea as DSTextArea
 }

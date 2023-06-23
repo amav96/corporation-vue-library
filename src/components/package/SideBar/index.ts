@@ -11,6 +11,6 @@ export default {
 } as Plugin
 
 export {
-    SideBar,
-    ItemSideBar
+    SideBar as DSSideBar,
+    ItemSideBar as DSItemSideBar
 }

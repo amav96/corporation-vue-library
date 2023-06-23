@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    TabBar
+    TabBar as DSTabBar
 }

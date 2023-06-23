@@ -1,4 +1,4 @@
-import { Inputs, requestConfiguration } from "../../../types";
+import { Inputs, requestConfiguration } from "../../../packageTypes";
 
 
 export interface Field {

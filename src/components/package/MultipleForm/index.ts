@@ -10,5 +10,5 @@ export default {
 
 
 export {
-    MultipleForm
+    MultipleForm as DSMultipleForm
 }

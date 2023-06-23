@@ -8,5 +8,5 @@ export default {
 } as Plugin
 
 export {
-    Abm
+    Abm as DSAbm
 }
