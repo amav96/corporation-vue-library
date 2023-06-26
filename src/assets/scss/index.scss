@@ -7,16 +7,16 @@
 // //Custom CSS
 @import 'custom';
 
-@import "@package/Date/Date";
-@import "@package/Input/Input";
-@import "@package/Button/Button";
-@import "@package/File/File";
-@import "@package/Form/Form";
-@import "@package/NavBar/NavBar";
-@import "@package/Select/Select";
-@import "@package/SideBar/SideBar";
-@import "@package/Table/Table";
-@import "@package/TextArea/TextArea";
+@import "../../components/package/Date/Date";
+@import "../../components/package/Input/Input";
+@import "../../components/package/Button/Button";
+@import "../../components/package/File/File";
+@import "../../components/package/Form/Form";
+@import "../../components/package/NavBar/NavBar";
+@import "../../components/package/Select/Select";
+@import "../../components/package/SideBar/SideBar";
+@import "../../components/package/Table/Table";
+@import "../../components/package/TextArea/TextArea";
 
 
 .AppRoot-fullPage{
