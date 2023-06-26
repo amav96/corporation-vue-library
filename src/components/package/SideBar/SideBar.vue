@@ -1,7 +1,7 @@
 <script lang='ts' setup>
 import type { Menu } from "@packageTypes"
-import {ItemSideBar} from '@package'
 import { toRefs, ref, PropType } from 'vue';
+import ItemSideBar from './ItemSideBar.vue';
 
 const props = defineProps({
     background : {
@@ -88,52 +88,3 @@ const close = () => {
     </div>
 </template>
 
-<style lang="scss">
-.Sidebar{
-    background: v-bind('background');
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 0px 20px 20px 0px;
-    padding: 10px 0px;
-    padding-right: 1.5px; /* Increase/decrease this value for cross-browser compatibility */
-
-    &__Top{
-        overflow-y: auto;
-        overflow-x: hidden;
-        max-height: 70%;
-    }
-
-    &__Top::-webkit-scrollbar{
-        height: 8px;
-        width: 4px;
-    }
-
-    &__Top::-webkit-scrollbar-thumb{
-        background: v-bind('colorScrollBar');
-        -webkit-border-radius: 1ex;
-    }
-
-    &__Above::-webkit-scrollbar{
-
-        height: 8px;
-        width: 4px;
-    }
-
-    &__Above::-webkit-scrollbar-thumb{
-        background: v-bind('colorScrollBar');
-        -webkit-border-radius: 1ex;
-    }
-
-
-    &__Above{
-        overflow-y: auto;
-        overflow-x: hidden;
-        // padding-top: 5%;
-        max-height: 30%;
-    }
-}
-
-
-
-</style>
