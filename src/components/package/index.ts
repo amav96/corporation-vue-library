@@ -20,6 +20,8 @@ import Layout from './Layout'
 import MultipleForm from './MultipleForm'
 import  FormFile  from './FormFile'
 import  ActionBar  from './ActionBar'
+import ButtonTest from './ButtonTest'
+
 
 export {
     Abm,
@@ -43,6 +45,7 @@ export {
     Layout,
     MultipleForm,
     FormFile,
-    ActionBar
+    ActionBar,
+    ButtonTest
 }
 
