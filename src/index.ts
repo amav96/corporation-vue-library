@@ -2,16 +2,15 @@ import { App } from 'vue'
 
 import * as components from './components/package'
 
-const DSLibrary = {
-    install(app: App) {
-        // Auto import all components
-        for (const componentKey in components) {
-            app.use((components as any)[componentKey])
+
+const plugin = {
+    install: (app: App) => {
+      for (const prop in components) {
+        if (typeof components[prop as keyof object] === 'object') {
+          const component = components[prop as keyof typeof components];
+          app.component(component.name, component);
         }
-    }
-}
-
-export default DSLibrary
-
-// export all components as vue plugin
-export * from './components/package'
+      }
+    },
+  };
+export default plugin

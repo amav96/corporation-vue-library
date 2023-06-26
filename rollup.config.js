@@ -78,7 +78,7 @@ export default () => {
       external: ['vue'],
       output: {
         format: 'esm',
-        file: 'dist/ds-library.mjs',
+        file: 'dist/corporation-library.mjs',
         // banner: banner
       },
       plugins: [
@@ -128,8 +128,8 @@ export default () => {
       external: ['vue'],
       output: {
         format: 'umd',
-        name: capitalize('ds-library'),
-        file: 'dist/ds-library.js',
+        name: capitalize('corporation-library'),
+        file: 'dist/corporation-library.js',
         exports: 'named',
         // banner: banner,
         globals: {

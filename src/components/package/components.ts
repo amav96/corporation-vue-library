@@ -23,7 +23,7 @@ import {  ActionBar }  from './ActionBar'
 import { ButtonTest } from './ButtonTest'
 
 
-export {
+export default {
     Abm,
     Button,
     CheckBox,

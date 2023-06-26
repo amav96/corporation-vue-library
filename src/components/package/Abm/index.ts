@@ -1,12 +1,12 @@
-import { App, Plugin } from 'vue'
+// import { App, Plugin } from 'vue'
 import Abm from './Abm.vue'
 
-export default {
-    install(Vue: App) {
-        Vue.component(Abm.name, Abm)
-    }
-} as Plugin
+// export default {
+//     install(Vue: App) {
+//         Vue.component(Abm.name, Abm)
+//     }
+// } as Plugin
 
 export {
-    Abm as Abm
+    Abm
 }

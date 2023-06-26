@@ -1,10 +1,11 @@
 {
-  "name": "transportesapp4",
+  "name": "corporation-vue-library",
   "private": false,
   "license": "MIT",
   "typings": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "version": "1.1.0",
+  "main": "dist/corporation-library.js",
+  "module": "dist/corporation-library.mjs",
+  "version": "1.1.1",
   "type": "module",
   "repository": {
     "url": "https://github.com/amav96/corporation-vue-library",

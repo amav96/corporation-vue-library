@@ -94,7 +94,7 @@ const onChange = (value: string, input: PropsInput | PropsTextArea) :void =>  {
   }
 }
 
-const onFile = (value: string, input: PropsFile | PropsTextArea) :void =>  {
+const onFile = (value: any, input: PropsFile | PropsTextArea) :void =>  {
   formValues.value[input.key as keyof object] = value
   if(input.listenChange){
     emit('onFile', { value, input })
