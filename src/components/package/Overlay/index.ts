@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    Overlay as DSOverlay
+    Overlay as Overlay
 }

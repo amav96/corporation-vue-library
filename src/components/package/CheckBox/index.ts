@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    CheckBox as DSCheckBox
+    CheckBox as CheckBox
 }

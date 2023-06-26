@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    Date as DSDate
+    Date as Date
 }

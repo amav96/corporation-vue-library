@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    ErrorsForm as DSErrorsForm
+    ErrorsForm as ErrorsForm
 }

@@ -7,5 +7,5 @@ export default {
 } as Plugin
 
 export {
-    Table as DSTable
+    Table as Table
 }

@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    ModalForm as DSModalForm
+    ModalForm as ModalForm
 }

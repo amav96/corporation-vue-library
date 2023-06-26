@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    NavBar as DSNavBar
+    NavBar as NavBar
 }

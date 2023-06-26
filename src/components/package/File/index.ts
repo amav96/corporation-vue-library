@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    File as DSFile
+    File as File
 }

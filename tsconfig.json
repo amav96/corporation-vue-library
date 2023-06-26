@@ -20,6 +20,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
+    "baseUrl": ".",
     "paths": {
       "@services/*": ["src/services/*"],
       "@repositories/*": ["src/repositories/*"],

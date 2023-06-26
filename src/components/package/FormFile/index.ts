@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    FormFile as DSFormFile
+    FormFile as FormFile
 }

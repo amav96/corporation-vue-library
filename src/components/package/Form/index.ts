@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    Form as DSForm
+    Form as Form
 }

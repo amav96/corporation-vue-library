@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    ActionBar as DSActionBar
+    ActionBar as ActionBar
 }

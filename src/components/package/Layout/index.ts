@@ -9,5 +9,5 @@ export default {
 } as Plugin
 
 export {
-    Layout as DSLayout
+    Layout as Layout
 }
