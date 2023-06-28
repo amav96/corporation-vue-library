@@ -1,7 +1,7 @@
 <script setup lang='ts'>
-import { ref, watch, toRefs } from 'vue';
-import {Button} from "@package";
-import { BModal } from 'bootstrap-vue-3';
+import { ref, watch, toRefs, onMounted } from 'vue';
+import {Button} from "../Button";
+import { BModal } from 'bootstrap-vue-next';
 
 const props = defineProps({
     visible: {
@@ -36,6 +36,12 @@ const emit = defineEmits<{
   (e: "cancel", value: any): void;
   (e: "confirm", value: any): void;
 }>();
+
+onMounted(() => {
+    if(visible.value){
+        internalVisible.value = true
+    }
+})
 
 const internalVisible = ref<boolean>(false)
 

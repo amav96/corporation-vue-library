@@ -1,13 +1,12 @@
 <script setup lang="ts" >
 import { toRefs, computed, ref, watch, nextTick } from 'vue';
-import { InputType } from "bootstrap-vue-3";
 import { isEmpty } from "@services/utils/Validations";
 import { generateId } from '@services/utils/GenerateId';
 import { useError } from '../../../composables/useError';
-import {ErrorsForm} from '@package';
+import {ErrorsForm} from '../ErrorsForm';
 import { PropsTextAreaPropType } from '@packageTypes';
 import { removeDuplicates } from '@services/utils/Property';
-import {BFormTextarea} from 'bootstrap-vue-3';
+import {BFormTextarea, InputType} from 'bootstrap-vue-next';
 
 // Props
 const props = defineProps({

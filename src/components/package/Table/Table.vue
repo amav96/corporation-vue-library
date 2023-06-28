@@ -2,18 +2,18 @@
 import { Pagination, BackEndPagination, Field, Inputs, requestConfiguration as requestConfigurationEntity } from "@packageTypes"
 import { toRefs, useSlots, computed, reactive, ref, onMounted, watch, PropType } from 'vue';
 
-import {useToast} from 'vue-toast-notification';
-import { BTable, BPagination } from 'bootstrap-vue-3';
+// import {useToast} from 'vue-toast-notification';
+import { BTable, BPagination, TableItem, TableField } from 'bootstrap-vue-next';
 import Form from "../Form/Form.vue";
 import Button from "../Button/Button.vue";
 
 const props = defineProps({
     items : {
-        type: Array as PropType<object[]>,
+        type: Array as PropType<TableItem[]>,
         default: () => [],
     },
     fields : {
-        type: Array as PropType<Field[]>
+        type: Array as PropType<TableField[]>
     },
     busy : {
         type: Boolean,
@@ -93,7 +93,7 @@ const emit = defineEmits<{
     (e: "loading", value: boolean): void;
 }>();
 
-const $toast = useToast();
+// const $toast = useToast();
 
 const slots = useSlots()
 
@@ -130,8 +130,8 @@ onMounted(() => {
     }
 })
 
-const localItems = ref<Array<object>>([{}]);
-watch(items, async (value: Array<object>) =>  {
+const localItems = ref<TableItem[]>([{}]);
+watch(items, async (value: TableItem[]) =>  {
     localItems.value = value
 });
 
@@ -164,14 +164,14 @@ const applyLookFor = async (params : any = null) :Promise<void> => {
             })
 
             let urlParams: any = url.value+'?'+ new URLSearchParams(queryParams as URLSearchParams)
-            
+
             const response = await fetch(urlParams, params);
             const result = await response.json();
 
             loadingSearch.value = false
             emit('loading', false)
             if(result.error){
-                $toast.error('Ha ocurrido un error con el servidor');
+                // $toast.error('Ha ocurrido un error con el servidor');
             }else{
                 if (result && result[modelKey.value as keyof object] && Array.isArray(result[modelKey.value as keyof object])){
                     localItems.value = result[modelKey.value as keyof object]
@@ -188,7 +188,7 @@ const applyLookFor = async (params : any = null) :Promise<void> => {
             console.log(error);
             loadingSearch.value = false
             emit('loading', false)
-            $toast.error('Ha ocurrido un error con el servidor B2');
+            // $toast.error('Ha ocurrido un error con el servidor B2');
         }
 
     } else if(!url?.value) {
@@ -198,7 +198,7 @@ const applyLookFor = async (params : any = null) :Promise<void> => {
 
 const resetLookFor = async () :Promise<void> => {
     const form = refTableForm.value
-    if(form){    
+    if(form){
         await form.resetValues()
         internalPagination.currentPage = 1
         await applyLookFor()

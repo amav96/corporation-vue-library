@@ -1,13 +1,8 @@
-// import { App, Plugin } from 'vue'
+import DSDate from './Date.vue'
 
-import Date from './Date.vue'
-
-// export default {
-//     install(Vue: App) {
-//         Vue.component(Date.name, Date)
-//     }
-// } as Plugin
 
 export {
-    Date
+    DSDate
 }
+
+export default DSDate

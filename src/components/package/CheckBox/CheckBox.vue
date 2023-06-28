@@ -2,10 +2,10 @@
 import { toRefs, reactive, watch, nextTick } from 'vue';
 import { isEmpty } from '@services/utils/Validations';
 import { useError } from '../../../composables/useError';
-import {ErrorsForm} from '@package';
+import { ErrorsForm } from '../ErrorsForm';
 import { CheckBoxPropType } from "@packageTypes"
 import { removeDuplicates } from '@services/utils/Property';
-import {BFormCheckbox} from 'bootstrap-vue-3';
+import {BFormCheckbox} from 'bootstrap-vue-next';
 
 const props = defineProps({
   ...CheckBoxPropType
@@ -52,13 +52,15 @@ watch(errors, async (value: Array<string>) =>  {
 });
 
 // Methods
-const onChange = (val: string | object | Array<string|number|object>) => {
-  emit("update:model-value", val);
-  handleValidations(val)
-  if(listenChange.value){
-    emit("onSwitch", val)
-  } else if(listenForm.value){
-    emit("onSwitch", val)
+const onChange = (val: any) => {
+  if(val){
+    emit("update:model-value", val);
+    handleValidations(val)
+    if(listenChange.value){
+      emit("onSwitch", val)
+    } else if(listenForm.value){
+      emit("onSwitch", val)
+    }
   }
 }
 </script>

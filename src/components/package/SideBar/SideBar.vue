@@ -1,7 +1,7 @@
 <script lang='ts' setup>
 import type { Menu } from "@packageTypes"
 import { toRefs, ref, PropType } from 'vue';
-import ItemSideBar from './ItemSideBar.vue';
+import ItemSideBar from '../ItemSideBar/ItemSideBar.vue';
 
 const props = defineProps({
     background : {

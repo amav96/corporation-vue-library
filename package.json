@@ -2,11 +2,10 @@
   "name": "corporation-vue-library",
   "private": false,
   "license": "MIT",
-  "typings": "dist/index.d.ts",
-  "main": "dist/corporation-library.js",
-  "module": "dist/corporation-library.mjs",
-  "version": "1.1.1",
+  "version": "1.1.48",
   "type": "module",
+  "main": "dist/corporation-vue-library.cjs.js",
+  "module": "dist/corporation-vue-library.es.js",
   "repository": {
     "url": "https://github.com/amav96/corporation-vue-library",
     "type": "git"
@@ -18,16 +17,16 @@
     ]
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "npm clean",
+    "build": "vite build && npm run build:styles",
+    "build:styles": "sass --no-charset ./src/assets/scss/index.scss",
     "preview": "vite preview",
     "lint:js": "eslint src --ext .ts,.vue",
     "test": "jest --watchAll",
-    "build:vue": "rollup -c && rollup -c --environment MINIFY",
+    "build:vue": "rollup -c",
     "build:vue:watch": "rollup -c --watch",
     "build:style": "sass --no-charset ./src/assets/scss/index.scss",
     "build:lib": "rimraf dist && npm run build:vue && npm run build:style",
@@ -39,14 +38,11 @@
     "@rollup/plugin-alias": "^5.0.0",
     "@rollup/plugin-replace": "^5.0.2",
     "@vuepic/vue-datepicker": "^4.2.2",
-    "bootstrap": "^5.2.3",
-    "bootstrap-vue-3": "^0.5.1",
+    "bootstrap": "^5.3.0",
     "minimist": "^1.2.8",
     "rollup-plugin-preprocess": "^0.0.4",
     "rollup-plugin-scss": "^4.0.0",
-    "vue": "^3.2.36",
     "vue-multiselect": "^3.0.0-beta.2",
-    "vue-router": "^4.2.2",
     "vue-toast-notification": "^3.0.4"
   },
   "devDependencies": {
@@ -58,6 +54,7 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "0.4.3",
     "@rollup/plugin-url": "^8.0.1",
     "@rushstack/eslint-patch": "^1.1.4",
     "@testing-library/jest-dom": "^5.16.5",
@@ -67,11 +64,12 @@
     "@types/node": "^18.15.3",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
-    "@vitejs/plugin-vue": "^4.2.1",
+    "@vitejs/plugin-vue": "^4.2.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "@vue/test-utils": "^2.0.0-rc.18",
     "@vue/vue3-jest": "^29.2.4",
     "babel-plugin-dynamic-import-node": "^2.3.3",
+    "bootstrap-vue-next": "^0.9.13",
     "clean-css-cli": "^5.6.2",
     "copyfiles": "^2.4.1",
     "eslint": "^8.36.0",
@@ -82,19 +80,26 @@
     "jest-environment-jsdom": "^29.5.0",
     "jest-transform-stub": "^2.0.0",
     "rimraf": "^5.0.1",
-    "rollup": "^3.25.1",
+    "rollup": "3.25.3",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.62.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
+    "unplugin-vue-components": "^0.25.1",
     "vite": "^4.1.0",
+    "vue": "3.3",
     "vue-eslint-parser": "^9.1.0",
-    "vue-tsc": "^1.0.24"
+    "vue-router": "^4.2.2",
+    "vue-tsc": "^1.6.4"
+  },
+  "peerDependencies": {
+    "vue": "3.3"
   }
 }

@@ -2,7 +2,7 @@ import { deleteProp } from '../components/package/Abm/Abm.type';
 import { CheckBox, CheckBoxKey, CheckBoxPropType } from '../components/package/CheckBox/CheckBox.type';
 import { PropsDatePicker, PropsDatePickerClaim, PropsDatePickerPropType } from '../components/package/Date/Date.type';
 import { AcceptTypes, PropsFile, PropsFilePropType } from '../components/package/File/File.type';
-import { Inputs,  } from '../components/package/Form/Form.type';
+import { Inputs, onSubmitEntity  } from '../components/package/Form/Form.type';
 import { FileType,  } from '../components/package/FormFile/FormFile.type';
 import { baseInputPropsPropType,PropsInputPropType,BaseInputProps,PropsInput,BaseInput } from '../components/package/Input/Input.type';
 import { ModalFormProps } from '../components/package/ModalForm/ModalForm.type';
@@ -12,6 +12,7 @@ import { Field,Pagination,BackEndPagination,TableProps } from '../components/pac
 import { ItemTab } from '../components/package/TabBar/TabBar.type';
 import { PropsTextAreaPropType, PropsTextArea } from '../components/package/TextArea/TextArea.type';
 import { currentMultipleForm } from '../components/package/MultipleForm/MultipleForm.type';
+import { menuItem } from '../components/package/ActionBar/ActionBar.type';
 
 import { requestConfiguration } from '../types/api.type';
 import { Validations } from '../types/validations.type';
@@ -36,7 +37,9 @@ export type {
     PropsDatePickerClaim,
     AcceptTypes,
     PropsFile,
+    menuItem,
     Inputs,
+    onSubmitEntity,
     BaseInputProps,
     PropsInput,
     BaseInput,

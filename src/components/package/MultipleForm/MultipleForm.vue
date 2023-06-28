@@ -1,6 +1,6 @@
 <script lang='ts' setup>
 import {Inputs, currentMultipleForm } from '@packageTypes';
-import {Button} from '@package'
+import {Button} from '../Button'
 import { PropType, toRefs } from 'vue';
 import baseApiUrl from '@services/BaseApiUrl';
 

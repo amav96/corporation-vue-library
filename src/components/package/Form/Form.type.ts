@@ -22,4 +22,9 @@ export interface Inputs extends
     clear?: boolean
 }
 
+export interface onSubmitEntity {
+  items: object,
+  isFormValid?: boolean
+}
+
 // ----------------------------------------------

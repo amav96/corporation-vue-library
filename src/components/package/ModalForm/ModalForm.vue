@@ -1,10 +1,11 @@
 <script lang='ts' setup>
 import { ref, toRefs, computed, ComputedRef, watch, onMounted, PropType,  } from 'vue';
-import {Form, Button} from "@package";
+import {Button} from "../Button";
+import {Form} from "../Form";
 import { serializeParams } from '@services/utils/api';
-import {useToast} from 'vue-toast-notification';
+// import {useToast} from 'vue-toast-notification';
 import { Inputs, requestConfiguration } from "@packageTypes"
-import {BModal} from 'bootstrap-vue-3';
+import {BModal} from 'bootstrap-vue-next';
 
 const props = defineProps({
     inputs: {
@@ -68,7 +69,7 @@ const emit = defineEmits<{
   (e: "close", value: boolean): void;
 }>();
 
-const $toast = useToast();
+// const $toast = useToast();
 
 const generatedForm = ref<Array<Inputs>>([]);
 const getInputs: ComputedRef<Array<Inputs>> = computed(() => {
@@ -122,7 +123,7 @@ const save = async ({ items, isFormValid } : any) => {
   if(!loading.value){
     loading.value = true
     if(isFormValid !== undefined && !isFormValid){
-        $toast.info('Debes llenar el formulario correctamente');
+        // $toast.info('Debes llenar el formulario correctamente');
     } else {
         try {
 
@@ -143,15 +144,15 @@ const save = async ({ items, isFormValid } : any) => {
           loading.value = false
           const { data, error } = result
           if(!data || error){
-              $toast.error('Ha ocurrido un error con el servidor');
+              // $toast.error('Ha ocurrido un error con el servidor');
           }else {
-              $toast.success('Guardado correctamente');
+              // $toast.success('Guardado correctamente');
               emit('afterStore', data)
               hideModal()
           }
         } catch (error) {
             loading.value = false
-            $toast.error('Ha ocurrido un error con el servidor b2');
+            // $toast.error('Ha ocurrido un error con el servidor b2');
         }
     }
   }
@@ -161,7 +162,7 @@ const update = async ({ items, isFormValid } : any) => {
     if(!loading.value){
         loading.value = true
         if(isFormValid !== undefined && !isFormValid){
-            $toast.info('Debes llenar el formulario correctamente');
+            // $toast.info('Debes llenar el formulario correctamente');
         } else {
             try {
                 let form : any = await serializeParams({...items,...updateDefaultParams?.value})
@@ -181,15 +182,15 @@ const update = async ({ items, isFormValid } : any) => {
                 loading.value = false
                 const { data, error } = result
                 if(!data || error){
-                    $toast.error('Ha ocurrido un error con el servidor');
+                    // $toast.error('Ha ocurrido un error con el servidor');
                 }else {
-                  $toast.success('Guardado correctamente');
+                  // $toast.success('Guardado correctamente');
                   emit('afterUpdate', data)
                   hideModal()
                 }
             } catch (error) {
                 loading.value = false
-                $toast.error('Ha ocurrido un error con el servidor b2');
+                // $toast.error('Ha ocurrido un error con el servidor b2');
             }
 
         }

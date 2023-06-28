@@ -1,7 +1,10 @@
-<script setup>
+<script setup lang='ts'>
 import './_ButtonTest.scss';
+console.log('charly')
 </script>
 
 <template>
-    <button class="boton">Boton de pruebas</button>
+    <button class="boton">
+        <slot name="content" >default</slot>
+    </button>
 </template>

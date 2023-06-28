@@ -1,13 +1,13 @@
 <script setup lang="ts" >
 import { toRefs, computed, ref, watch, nextTick } from 'vue';
-import { InputType } from "bootstrap-vue-3";
+import { InputType } from "bootstrap-vue-next";
 import { generateId } from '@services/utils/GenerateId';
-import {ErrorsForm} from '@package';
+import {ErrorsForm} from '../ErrorsForm';
 import { useError } from '../../../composables/useError';
 import { isEmpty } from '@services/utils/Validations';
 import { PropsInputPropType } from "@packageTypes"
 import { removeDuplicates } from '@services/utils/Property';
-import {BFormInput} from 'bootstrap-vue-3';
+import {BFormInput} from 'bootstrap-vue-next';
 
 // Props
 
@@ -53,8 +53,8 @@ watch(hasError, (value: boolean | null) => {
   emit("setError", value)
 });
 
-watch(errors, async (value: string | Array<string>) =>  {
-  errorMessages.value = [...new Set(value)] // Evitamos mostrar mensajes repetidos
+watch(errors, async (value: Array<string>) =>  {
+  errorMessages.value = await removeDuplicates(value)
   await nextTick()
   if(errorMessages.value.length > 0){
     emit("setError", true)

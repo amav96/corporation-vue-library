@@ -7,12 +7,15 @@
       "dom.iterable",
       "esnext"
     ],
+    "declarationDir": "lib1",
     "declaration": true,
     "allowJs": true,
+    "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "ESNext",
@@ -31,7 +34,5 @@
     }
  
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.vue","components.d.ts"]
 }

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { toRefs } from 'vue';
-import { BFormInvalidFeedback } from 'bootstrap-vue-3';
+import { BFormInvalidFeedback } from 'bootstrap-vue-next';
 
 // Props
 interface Props {

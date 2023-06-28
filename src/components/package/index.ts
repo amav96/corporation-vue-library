@@ -1,7 +1,7 @@
 import {Abm} from './Abm'
 import {Button} from './Button'
 import { CheckBox } from './CheckBox'
-import { Date } from './Date'
+import { DSDate as Date } from './Date'
 import { Dialog } from './Dialog'
 import { ErrorsForm } from './ErrorsForm'
 import { File } from './File'
@@ -12,7 +12,7 @@ import { NavBar } from './NavBar'
 import { Overlay } from './Overlay'
 import { Select } from './Select'
 import { SideBar } from './SideBar'
-import { ItemSideBar } from './SideBar'
+import { ItemSideBar } from './ItemSideBar'
 import { Table } from './Table'
 import { TextArea } from './TextArea'
 import { TabBar } from './TabBar'
@@ -23,7 +23,7 @@ import {  ActionBar }  from './ActionBar'
 import { ButtonTest } from './ButtonTest'
 
 
-export {
+export default {
     Abm,
     Button,
     CheckBox,
@@ -48,4 +48,3 @@ export {
     ActionBar,
     ButtonTest
 }
-

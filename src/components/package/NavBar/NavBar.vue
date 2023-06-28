@@ -1,15 +1,3 @@
-<template>
-    <div class="navbar-container">
-        <div class="navbar-container__main">
-            <img
-            :src="logo"
-            >
-            <div class="navbar-container__main__title">
-                <span> {{ title }} </span>
-            </div>
-        </div>
-    </div>
-</template>
 <script lang='ts' setup>
 import { toRefs } from 'vue';
 
@@ -30,5 +18,18 @@ const {
  } = toRefs(props);
 
 </script>
+
+<template>
+    <div class="navbar-container">
+        <div class="navbar-container__main">
+            <img
+            :src="logo"
+            >
+            <div class="navbar-container__main__title">
+                <span> {{ title }} </span>
+            </div>
+        </div>
+    </div>
+</template>
 
 

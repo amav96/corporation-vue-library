@@ -1,11 +1,16 @@
 <script lang="ts" setup>
 
-import { Inputs, PropsSelectKey, PropsTextArea, PropsDatePickerClaim, CheckBoxKey, PropsInput } from "@packageTypes"
+import { Inputs, PropsSelectKey, PropsTextArea, PropsDatePickerClaim, CheckBoxKey, PropsInput, onSubmitEntity } from "@packageTypes"
 import { toRefs, computed, ComputedRef, ref, nextTick, PropType } from 'vue';
-import {File, Input, TextArea, Select, Date, CheckBox} from "@package";
+import {File} from "../File";
+import {Input} from "../Input";
+import {TextArea} from "../TextArea";
+import {Select} from "../Select";
+import {DSDate as Date} from "../Date";
+import {CheckBox} from "../CheckBox";
 import { Validator } from '@services/utils/Validator';
 import { isEmpty } from '@services/utils/Validations';
-import {BCol, BRow, BForm} from 'bootstrap-vue-3';
+import {BCol, BRow, BForm} from 'bootstrap-vue-next';
 import { PropsFile } from '../File/File.type';
 
 const props = defineProps({
@@ -24,10 +29,6 @@ const props = defineProps({
 
 const { inputs, customClass } = toRefs(props);
 
-interface onSubmitEntity {
-  items: object,
-  isFormValid?: boolean
-}
 
 const emit = defineEmits<{
   (e: "select", data: object): void;

@@ -1,15 +1,8 @@
 <script lang="ts" setup>
 import './ActionBar.scss';
 import { ref, PropType } from 'vue';
+import { menuItem } from './ActionBar.type';
 
-interface menuItem {
-  title: string;
-  icon?: string;
-  name?: {
-    name: string;
-  };
-  path?: string;
-}
 
 const props = defineProps({
   translateY: {

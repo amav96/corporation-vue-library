@@ -1,7 +1,7 @@
-<script setup lang='ts'>
+<script  lang='ts' setup>
 
 import { toRefs, reactive, ref, computed, PropType, nextTick, onMounted, watch } from 'vue';
-import {useToast} from 'vue-toast-notification';
+// import {useToast} from 'vue-toast-notification';
 import { ModalFormProps, deleteProp, TableProps, requestConfiguration as  requestConfigurationEntity } from "@packageTypes"
 import {Button} from '../Button';
 import {ModalForm} from '../ModalForm';
@@ -44,7 +44,7 @@ const props = defineProps({
   },
 });
 
-const $toast = useToast();
+// const $toast = useToast();
 
 const {
   table,
@@ -110,7 +110,7 @@ const handleUpdate = (data: any) :void => {
 }
 
 const handleStore = (data: any) :void => {
-  localItems.value = [...[data], ...localItems.value]  
+  localItems.value = [...[data], ...localItems.value]
   if(modalFormData.afterStore){
     modalFormData.afterStore({resource : data})
   }
@@ -146,9 +146,9 @@ const deleteItem = async (resource: any ) :Promise<void> => {
       const result = await response.json();
       loadingDelete.value = false
       if(result.errors || !result.data){
-        $toast.error('No se ha eliminado correctamente')
+        // $toast.error('No se ha eliminado correctamente')
       } else {
-        $toast.success('Eliminado correctamente')
+        // $toast.success('Eliminado correctamente')
         localItems.value = localItems.value.filter((val) => val.id !== resource.value)
         if(afterDelete?.value){
           afterDelete.value({resource})
@@ -156,7 +156,7 @@ const deleteItem = async (resource: any ) :Promise<void> => {
         emit('afterDelete', {resource})
       }
     } catch (error) {
-      
+
     }
   }
 }
@@ -191,7 +191,7 @@ const inactives = computed(() => aditionalParams.value.hasOwnProperty('deleted')
 
 const loadingRestore = ref<boolean>(false);
 const restore = async (data:any) :Promise<void> => {
-  if(!loadingRestore.value){  
+  if(!loadingRestore.value){
     loadingRestore.value = true
     let buildUrlRestore = urlRestore?.value ?? `${urlDelete?.value}/restore`;
     const url = `${buildUrlRestore}/${data.item.id}`;
@@ -203,9 +203,9 @@ const restore = async (data:any) :Promise<void> => {
     const result = await response.json();
     loadingRestore.value = false
     if(result.errors || !result.data){
-      $toast.error('No se ha restaurado correctamente')
+      // $toast.error('No se ha restaurado correctamente')
     } else {
-      $toast.success('Restaurado correctamente')
+      // $toast.success('Restaurado correctamente')
       localItems.value = localItems.value.filter((val) => val.id !== data.item.id)
       if(modalFormData.afterStore){
         modalFormData.afterStore({resource : result.data})
@@ -218,7 +218,7 @@ const restore = async (data:any) :Promise<void> => {
 const busy = ref<boolean>(false);
 
 const handleClose = (data: any) => {
-  modalFormData.visible = data; 
+  modalFormData.visible = data;
   modalFormData.isEditMode = data
 }
 
@@ -311,11 +311,8 @@ const handleClose = (data: any) => {
         </Button>
       </template>
       <template v-slot:table-busy>
-       
           <div class="text-center text-dark my-2">
-            
           </div>
-      
       </template>
       </Table>
       <ModalForm

@@ -1,6 +1,6 @@
 <script setup lang='ts'> 
-import { toRefs } from 'vue';
-import {BButton} from 'bootstrap-vue-3';
+import { toRefs, PropType } from 'vue';
+import {BButton, ButtonType} from 'bootstrap-vue-next';
 
 const props = defineProps({
   text: {
@@ -20,7 +20,7 @@ const props = defineProps({
       default: 'px-2'
   },
   type: {
-    type: String,
+    type: String as PropType<ButtonType>,
     default: 'submit'
   },
   size:{
@@ -75,8 +75,7 @@ const {
 </script>
 
 <template>
-    <BButton
-    :type=type
+    <div
     :class="[
       `button-global LocalBaseButton c-btn-${size} ${background} ${textColor} ${customClass} c-rounded-${rounded} ${loading || disabled? '' : 'cursor-pointer'}`
       ]"
@@ -99,5 +98,5 @@ const {
         </div>
       </template>
     </slot>
-    </BButton>
+    </div>
 </template>

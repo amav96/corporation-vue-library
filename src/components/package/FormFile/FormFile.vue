@@ -1,7 +1,7 @@
 <script lang='ts' setup>
 import { toRefs, PropType, ref, onMounted, watch, nextTick } from 'vue';
 import { FileType, Inputs } from '@packageTypes';
-import { File } from '@package';
+import { File } from '../File';
 import { convertFileToRender } from '@services/utils/Image';
 import { generateId } from '@services/utils/GenerateId';
 
@@ -49,7 +49,7 @@ const files = ref<File[]>([])
 
 const fileList = ref<FileType[]>([])
 
-const onFile = async (files: File[]) => { 
+const onFile = async (files: any[]) => { 
   files.forEach( (f) => {
     fileList.value.push(
       {
